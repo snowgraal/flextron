@@ -99,7 +99,17 @@ body {
     color: var(--primary) !important;
 }
 
-/* ===== ГЕРОЙ СЕКЦИЯ ===== */
+/* ===== БУРГЕР-МЕНЮ (ТРИ ПОЛОСЫ) БЕЛЫМ ЦВЕТОМ ===== */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ===== ГЕРОЙ СЕКЦИЯ (отступ, чтобы не перекрывало) ===== */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -107,7 +117,7 @@ body {
     align-items: center;
     background: var(--gradient-dark);
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .hero-title {
@@ -128,48 +138,6 @@ body {
     color: rgba(255, 255, 255, 0.9) !important;
     margin-bottom: 2rem;
     line-height: 1.6;
-}
-
-.hero-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 0.7rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.feature-item i {
-    color: var(--primary);
-}
-
-.hero-image-wrapper {
-    position: relative;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 30px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 107, 0, 0.3);
 }
 
 /* ===== КНОПКИ ===== */
@@ -195,7 +163,7 @@ body {
 
 /* ===== СЕКЦИИ ===== */
 .section-padding {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .section-title {
@@ -230,9 +198,9 @@ body {
 
 /* ===== КАРТОЧКИ ТОВАРОВ ===== */
 .category-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin: 3rem 0 2rem;
+    margin: 2rem 0 1.5rem;
     padding-left: 1rem;
     border-left: 4px solid var(--primary);
     color: var(--dark) !important;
@@ -240,7 +208,7 @@ body {
 
 .product-card {
     background: white;
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -249,31 +217,30 @@ body {
 }
 
 .product-card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
 .product-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.8rem;
+    left: 0.8rem;
     background: var(--gradient);
     color: white;
-    padding: 0.3rem 1rem;
+    padding: 0.2rem 0.8rem;
     border-radius: 50px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     z-index: 1;
 }
 
-/* ФОТО ТОВАРОВ — без черных полос */
 .product-img {
     width: 100%;
-    height: 280px;
+    height: 200px;
     object-fit: contain;
     background: #f5f5f5;
     transition: transform 0.5s ease;
-    padding: 1rem;
+    padding: 0.8rem;
 }
 
 .product-card:hover .product-img {
@@ -281,45 +248,46 @@ body {
 }
 
 .product-content {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .product-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 800;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: var(--dark) !important;
 }
 
 .product-spec {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--gray) !important;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
     border-bottom: 1px solid #e2e8f0;
 }
 
 .product-detail {
     display: flex;
     justify-content: space-between;
-    margin: 0.6rem 0;
+    margin: 0.4rem 0;
 }
 
 .product-detail span:first-child {
     color: var(--gray) !important;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 }
 
 .product-detail span:last-child {
     font-weight: 600;
     color: var(--dark) !important;
+    font-size: 0.75rem;
 }
 
 .product-price-info {
     background: linear-gradient(135deg, #fff5eb 0%, #fff 100%);
-    padding: 0.8rem;
-    border-radius: 12px;
-    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin: 0.8rem 0;
     text-align: center;
     border: 1px solid rgba(255, 107, 0, 0.2);
 }
@@ -328,18 +296,20 @@ body {
     margin: 0;
     color: var(--primary) !important;
     font-weight: 700;
+    font-size: 0.8rem;
 }
 
 .btn-order {
     background: var(--gradient);
     color: white !important;
     border: none;
-    padding: 0.8rem;
-    border-radius: 12px;
+    padding: 0.6rem;
+    border-radius: 10px;
     font-weight: 600;
     transition: var(--transition);
     width: 100%;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
 .btn-order:hover {
@@ -351,8 +321,8 @@ body {
 /* ===== ФИТИНГИ ===== */
 .fitting-card {
     background: white;
-    border-radius: 20px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 1rem;
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -365,38 +335,37 @@ body {
 }
 
 .fitting-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-/* ФОТО ФИТИНГОВ — без черных полос */
 .fitting-card .product-img {
-    height: 140px;
+    height: 100px;
     object-fit: contain;
     background: #f5f5f5;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
 }
 
 .fitting-card h5 {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: var(--dark) !important;
 }
 
 .fitting-card p {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--gray) !important;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .fitting-price-info {
-    margin-top: 1rem;
-    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    padding-top: 0.3rem;
     border-top: 1px solid #e2e8f0;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--primary) !important;
     font-weight: 600;
 }
@@ -405,7 +374,7 @@ body {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 16px;
     cursor: pointer;
     aspect-ratio: 4/3;
 }
@@ -428,7 +397,7 @@ body {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 1rem;
+    padding: 0.8rem;
     color: white;
     transform: translateY(100%);
     transition: transform 0.3s ease;
@@ -442,24 +411,24 @@ body {
     margin: 0;
     font-weight: 600;
     color: white !important;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 /* ===== ФОРМА ===== */
 .order-form-wrapper {
     background: white;
-    border-radius: 30px;
-    padding: 2.5rem;
+    border-radius: 24px;
+    padding: 2rem;
     box-shadow: var(--shadow-lg);
     position: relative;
 }
 
 .form-control, .form-select {
     border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
     transition: var(--transition);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .form-control:focus, .form-select:focus {
@@ -471,77 +440,35 @@ body {
 .form-label {
     font-weight: 600;
     color: var(--dark) !important;
-    margin-bottom: 0.5rem;
-}
-
-/* ===== КОНТАКТЫ ===== */
-.contact-section {
-    background: var(--gradient-dark);
-    position: relative;
-}
-
-.contact-card {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    transition: var(--transition);
-    height: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary);
-}
-
-.contact-card i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.contact-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    color: white !important;
-}
-
-.contact-card p {
-    color: rgba(255, 255, 255, 0.9) !important;
     margin-bottom: 0.3rem;
+    font-size: 0.85rem;
 }
 
-.contact-card a {
+/* ===== КОНТАКТЫ (слово Контакты оранжевым) ===== */
+.contact-section .section-title {
     color: white !important;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: var(--transition);
 }
 
-.contact-card a:hover {
-    color: var(--primary) !important;
+.contact-section .section-title::after {
+    background: var(--primary);
 }
 
 /* ===== ФУТЕР ===== */
 .footer {
     background: var(--dark);
     color: white;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .footer p {
     color: rgba(255, 255, 255, 0.8) !important;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 /* ===== МОДАЛЬНОЕ ОКНО ===== */
 .modal-content {
-    border-radius: 24px;
+    border-radius: 20px;
     border: none;
     overflow: hidden;
 }
@@ -553,12 +480,8 @@ body {
 }
 
 .modal-body {
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
-}
-
-.modal-body p {
-    color: var(--gray) !important;
 }
 
 /* ===== КНОПКА НАВЕРХ ===== */
@@ -566,8 +489,8 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     background: var(--primary);
     color: white;
     border-radius: 50%;
@@ -594,39 +517,25 @@ body {
 
 .scroll-top i {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-/* ===== АДАПТИВНОСТЬ (ДЛЯ ТЕЛЕФОНОВ) ===== */
-@media (max-width: 992px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-    .order-form-wrapper {
-        padding: 1.8rem;
-    }
-    .product-img {
-        height: 220px;
-    }
-}
-
+/* ===== АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНА (2 КОЛОНКИ) ===== */
 @media (max-width: 768px) {
     .section-padding {
-        padding: 50px 0;
+        padding: 40px 0;
     }
+
     .hero {
-        padding-top: 70px;
+        padding-top: 80px;
         min-height: auto;
     }
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
     }
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: center;
     }
     .hero-features {
@@ -636,94 +545,152 @@ body {
         justify-content: center;
     }
     .hero-image {
-        max-width: 80%;
-        margin-top: 2rem;
+        max-width: 70%;
+        margin-top: 1.5rem;
     }
-    .category-title {
-        font-size: 1.3rem;
-        margin: 2rem 0 1rem;
-    }
-    .section-title {
-        font-size: 1.8rem;
-    }
-    .section-subtitle {
-        font-size: 0.95rem;
-    }
-    .product-img {
-        height: 200px;
-    }
-    .fitting-card .product-img {
-        height: 120px;
-    }
-    .product-title {
-        font-size: 1rem;
-    }
-    .product-detail span {
-        font-size: 0.75rem;
-    }
-    .product-price-info p {
-        font-size: 0.8rem;
-    }
-    .btn-order {
-        padding: 0.6rem;
-        font-size: 0.85rem;
-    }
-    .fitting-card {
-        padding: 1rem;
-    }
-    .fitting-card h5 {
-        font-size: 0.9rem;
-    }
-    .contact-card {
-        padding: 1.2rem;
-    }
-    .contact-card h4 {
-        font-size: 1rem;
-    }
-    .contact-card a {
-        font-size: 0.9rem;
-    }
-    .footer p {
-        font-size: 0.75rem;
-        text-align: center;
-    }
-    .container {
-        padding: 0 1rem;
-    }
-}
 
-@media (max-width: 576px) {
-    .hero-title {
+    .section-title {
         font-size: 1.6rem;
     }
-    .hero-subtitle {
-        font-size: 0.9rem;
+    .section-subtitle {
+        font-size: 0.85rem;
+        margin: 1rem auto 2rem;
     }
-    .feature-item {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
+
+    .category-title {
+        font-size: 1.2rem;
+        margin: 1.5rem 0 1rem;
     }
-    .section-title {
-        font-size: 1.5rem;
+
+    /* КАРТОЧКИ В 2 КОЛОНКИ */
+    .row.g-4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
+
+    .product-card {
+        margin: 0;
+    }
+
     .product-img {
-        height: 180px;
+        height: 140px;
+        padding: 0.5rem;
     }
+
     .product-content {
-        padding: 1rem;
+        padding: 0.8rem;
     }
+
     .product-title {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
+
+    .product-spec {
+        font-size: 0.7rem;
+    }
+
+    .product-detail span {
+        font-size: 0.65rem;
+    }
+
+    .product-price-info p {
+        font-size: 0.7rem;
+    }
+
+    .btn-order {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    /* ФИТИНГИ ТОЖЕ В 2 КОЛОНКИ */
+    .fittings-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .fitting-card {
+        padding: 0.8rem;
+    }
+
+    .fitting-card .product-img {
+        height: 80px;
+    }
+
+    .fitting-card h5 {
+        font-size: 0.75rem;
+    }
+
+    .fitting-card p {
+        font-size: 0.65rem;
+    }
+
+    /* ГАЛЕРЕЯ */
+    .gallery-item img {
+        height: 150px;
+    }
+
+    .gallery-overlay p {
+        font-size: 0.7rem;
+    }
+
+    /* ФОРМА */
     .order-form-wrapper {
         padding: 1.2rem;
     }
+
     .form-control, .form-select {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
     }
+
     .btn-primary-custom {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* КОНТАКТЫ */
+    .contact-card {
+        padding: 1rem;
+    }
+
+    .contact-card i {
+        font-size: 1.5rem;
+    }
+
+    .contact-card h4 {
+        font-size: 1rem;
+    }
+
+    .contact-card a {
+        font-size: 0.85rem;
+    }
+
+    /* ФУТЕР */
+    .footer p {
+        font-size: 0.65rem;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .product-img {
+        height: 120px;
+    }
+
+    .fitting-card .product-img {
+        height: 70px;
+    }
+
+    .gallery-item img {
+        height: 120px;
     }
 }
